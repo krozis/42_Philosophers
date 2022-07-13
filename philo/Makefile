@@ -6,13 +6,14 @@ CC			= 	gcc
 RM			=	rm -rf
 
 #Compilation flags
-FLAGS		=	$(LFLAGS) #$(WFLAGS)  # $(MEM_FLAGS)
+FLAGS		=	$(LFLAGS) $(WFLAGS)  # $(MEM_FLAGS)
 LFLAGS		=	-lpthread
 WFLAGS		=	-Wall -Werror -Wextra
 MEM_FLAGS	=	-g3 -fsanitize=address
 
 #Source files
 SRCS		=	philo.c\
+				launch.c\
 				error.c\
 				utils.c\
 

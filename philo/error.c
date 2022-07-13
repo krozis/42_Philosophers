@@ -6,7 +6,7 @@
 /*   By: krozis <krozis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 23:39:57 by krozis            #+#    #+#             */
-/*   Updated: 2022/07/12 01:04:05 by krozis           ###   ########.fr       */
+/*   Updated: 2022/07/13 21:24:23 by krozis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,10 @@ int	ph_param_error(t_ph *ph)
 	int	ret;
 
 	ret = EXIT_SUCCESS;
+	if (ph->time_death == 0)
+		ret = ph_error_write(LIGHT FATALITY EOC);
+	if (ph->nb_philo < 1)
+		ret = ph_error_write(LIGHT NO_PHILO EOC);
 	if (ph->nb_eat == ERR_NO_NEG || ph->time_death == ERR_NO_NEG
 		|| ph->time_eat == ERR_NO_NEG || ph->time_sleep == ERR_NO_NEG
 		|| ph->nb_eat == ERR_NO_NEG)
