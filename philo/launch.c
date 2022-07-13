@@ -6,7 +6,7 @@
 /*   By: krozis <krozis@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/12 01:21:03 by krozis            #+#    #+#             */
-/*   Updated: 2022/07/14 00:25:28 by krozis           ###   ########.fr       */
+/*   Updated: 2022/07/14 00:35:59 by krozis           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	eating(t_philo *philo)
 	t_ph	*ph;
 
 	ph = philo->ph;
-	if (philo->ate >= ph->nb_eat)
+	if (ph->nb_eat != NOT_CONFIGURED && philo->ate >= ph->nb_eat)
 		return ;
 	pthread_mutex_lock(&(ph->fork[philo->left_id]));
 	ph_print(ph, philo->id, FORK, BLACK);
